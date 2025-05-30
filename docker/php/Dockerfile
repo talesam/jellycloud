@@ -8,11 +8,15 @@ RUN set -ex; \
         libzip-dev \
         zip \
         unzip \
-        shadow; \
+        shadow \
+        curl; \
     # Instalar extensões PHP
     docker-php-ext-install \
         pdo_sqlite \
         zip
+
+# Instalar Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Configurar diretório de dados
 RUN mkdir -p /var/www/html/data /var/www/uploads && \
