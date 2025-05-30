@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" style="background: transparent;">
+  <defs>
+    <!-- Gradientes inspirados no Jellyfin -->
+    <linearGradient id="jellyfin-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#AA5CC3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7D4698;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A4C93;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cloud-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F4FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BDE0FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sombra suave estilo macOS -->
+    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Ícone da nuvem minimalista -->
+  <g transform="translate(10, 20)">
+    <!-- Nuvem principal -->
+    <path d="M15 25 C15 15, 25 10, 35 15 C40 10, 50 10, 55 15 C60 15, 65 20, 65 25 C65 30, 60 35, 55 35 L20 35 C15 35, 10 30, 15 25 Z" 
+          fill="url(#cloud-gradient)" 
+          filter="url(#dropshadow)" 
+          stroke="#AA5CC3" 
+          stroke-width="1.5" 
+          opacity="0.9"/>
+    
+    <!-- Gotinhas minimalistas estilo Jellyfin -->
+    <circle cx="25" cy="40" r="2" fill="#AA5CC3" opacity="0.7"/>
+    <circle cx="35" cy="42" r="1.5" fill="#7D4698" opacity="0.6"/>
+    <circle cx="45" cy="40" r="2" fill="#6A4C93" opacity="0.8"/>
+  </g>
+  
+  <!-- Texto JellyCloud -->
+  <text x="85" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="24" font-weight="600" fill="url(#jellyfin-gradient)" letter-spacing="-0.5px">
+    Jelly
+  </text>
+  
+  <text x="85" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="20" font-weight="300" fill="#6B7280" letter-spacing="-0.3px">
+    Cloud
+  </text>
+  
+  <!-- Elemento decorativo -->
+  <circle cx="250" cy="40" r="3" fill="#AA5CC3" opacity="0.3"/>
+  <circle cx="260" cy="35" r="2" fill="#7D4698" opacity="0.4"/>
+  <circle cx="270" cy="45" r="2.5" fill="#6A4C93" opacity="0.3"/>
+</svg>

@@ -1,0 +1,1145 @@
+/* ===== JELLYCLOUD - ESTILO INSPIRADO EM JELLYFIN + macOS ===== */
+
+/* Cores primárias do Jellyfin */
+:root {
+    --jellyfin-primary: #AA5CC3;
+    --jellyfin-secondary: #7D4698;
+    --jellyfin-tertiary: #6A4C93;
+    --jellyfin-accent: #00A4DC;
+    
+    /* Paleta neutra estilo macOS */
+    --macos-bg: #F5F5F7;
+    --macos-surface: #FFFFFF;
+    --macos-surface-secondary: #F9F9FB;
+    --macos-border: #E5E5E7;
+    --macos-text: #1D1D1F;
+    --macos-text-secondary: #6E6E73;
+    --macos-text-tertiary: #86868B;
+    
+    /* Sombras estilo macOS */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+    
+    /* Border radius estilo macOS */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    /* Transições suaves */
+    --transition-fast: all 0.15s ease;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fonte do sistema estilo macOS */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--macos-bg);
+    color: var(--macos-text);
+    line-height: 1.6;
+}
+
+/* Elementos gerais */
+.hidden {
+    display: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.cursor-pointer:hover {
+    color: var(--jellyfin-primary);
+    transform: translateY(-1px);
+}
+
+/* Tipografia aprimorada */
+.fs-7 { font-size: 14px !important; }
+.fs-8 { font-size: 12px !important; }
+.fs-9 { font-size: 10px !important; }
+.fs-10 { font-size: 8px !important; }
+.fs-11 { font-size: 6px !important; }
+
+.font-weight-medium { font-weight: 500; }
+.font-weight-semibold { font-weight: 600; }
+
+.text-jellyfin { color: var(--jellyfin-primary) !important; }
+.text-macos-secondary { color: var(--macos-text-secondary) !important; }
+.text-macos-tertiary { color: var(--macos-text-tertiary) !important; }
+
+/* Z-index */
+.z-index-1 { z-index: 10000 !important; }
+
+/* Backgrounds com paleta Jellyfin + macOS */
+.bg-jellyfin-primary { background-color: var(--jellyfin-primary) !important; }
+.bg-jellyfin-secondary { background-color: var(--jellyfin-secondary) !important; }
+.bg-jellyfin-light { 
+    background: linear-gradient(135deg, #F3E8FF 0%, #EDE9FE 100%) !important; 
+}
+
+.bg-macos-surface { background-color: var(--macos-surface) !important; }
+.bg-macos-surface-secondary { background-color: var(--macos-surface-secondary) !important; }
+
+/* Gradientes estilo Jellyfin */
+.bg-gradient-jellyfin {
+    background: linear-gradient(135deg, var(--jellyfin-primary) 0%, var(--jellyfin-secondary) 50%, var(--jellyfin-tertiary) 100%) !important;
+}
+
+.bg-gradient-subtle {
+    background: linear-gradient(135deg, #FAFBFF 0%, #F4F6FF 100%) !important;
+}
+
+/* Cards estilo macOS */
+.card-macos {
+    background: var(--macos-surface);
+    border: 1px solid var(--macos-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(20px);
+}
+
+.card-macos:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* Botões estilo macOS com cores Jellyfin */
+.btn-jellyfin {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-weight: 500;
+    padding: 12px 24px;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-jellyfin:hover {
+    background: linear-gradient(135deg, var(--jellyfin-secondary), var(--jellyfin-tertiary));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+    color: white;
+}
+
+.btn-macos {
+    background: var(--macos-surface);
+    border: 1px solid var(--macos-border);
+    border-radius: var(--radius-md);
+    color: var(--macos-text);
+    font-weight: 500;
+    padding: 12px 24px;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(20px);
+}
+
+.btn-macos:hover {
+    background: var(--macos-surface-secondary);
+    border-color: var(--jellyfin-primary);
+    color: var(--jellyfin-primary);
+    transform: translateY(-1px);
+}
+
+/* Formulários estilo macOS */
+.form-control-macos {
+    background: var(--macos-surface);
+    border: 1px solid var(--macos-border);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    transition: var(--transition-smooth);
+    font-size: 16px;
+}
+
+.form-control-macos:focus {
+    border-color: var(--jellyfin-primary);
+    box-shadow: 0 0 0 3px rgba(170, 92, 195, 0.1);
+    outline: none;
+}
+
+/* Elementos de navegação */
+.nav-jellyfin {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--macos-border);
+}
+
+/* Ícones com efeito hover */
+.icon-hover {
+    transition: var(--transition-smooth);
+}
+
+.icon-hover:hover {
+    color: var(--jellyfin-primary) !important;
+    transform: scale(1.1);
+}
+
+/* Modais estilo macOS */
+.modal-content-macos {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(20px);
+}
+
+.modal-header-jellyfin {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    color: white;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border: none;
+}
+
+/* Alerts estilo macOS */
+.alert-macos {
+    border: none;
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(20px);
+    border-left: 4px solid var(--jellyfin-primary);
+}
+
+/* ===== ALERT STYLES ===== */
+.alert-info-jellyfin {
+    background: linear-gradient(135deg, rgba(41, 128, 185, 0.1), rgba(52, 152, 219, 0.1));
+    border: 1px solid rgba(41, 128, 185, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.alert-info-jellyfin ul {
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.alert-info-jellyfin li {
+    margin-bottom: 0.25rem;
+}
+
+.alert-success-jellyfin {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.alert-warning-jellyfin {
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(243, 156, 18, 0.1));
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.alert-danger-jellyfin {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* ===== END ALERT STYLES ===== */
+
+/* Pré-código com estilo melhorado */
+pre {
+    background: var(--macos-surface-secondary);
+    border: 1px solid var(--macos-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin: 16px 0;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Tabelas estilo macOS */
+.table-macos {
+    background: var(--macos-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table-macos th {
+    background: var(--macos-surface-secondary);
+    border: none;
+    font-weight: 600;
+    color: var(--macos-text-secondary);
+    padding: 16px;
+}
+
+.table-macos td {
+    border: none;
+    border-bottom: 1px solid var(--macos-border);
+    padding: 16px;
+    vertical-align: middle;
+}
+
+.table-macos tbody tr:hover {
+    background: var(--macos-surface-secondary);
+}
+
+/* ===== USERS TABLE STYLES ===== */
+.users-table-container {
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.table-jellyfin {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--background-primary);
+    margin: 0;
+}
+
+.table-header-jellyfin {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+}
+
+.table-header-jellyfin th {
+    padding: 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    white-space: nowrap;
+}
+
+.table-header-jellyfin th:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+.table-header-jellyfin th:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+
+.table-row-jellyfin {
+    transition: all var(--transition-fast);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-row-jellyfin:hover {
+    background: var(--background-secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-row-jellyfin td {
+    padding: 1rem;
+    vertical-align: middle;
+    border: none;
+    color: var(--text-primary);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.user-details {
+    min-width: 0;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.user-email {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.btn-action {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-action:hover {
+    background: var(--jellyfin-primary);
+    color: white;
+    border-color: var(--jellyfin-primary);
+    transform: scale(1.05);
+}
+
+.dropdown-menu-jellyfin {
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-dropdown);
+    padding: 0.5rem 0;
+    min-width: 180px;
+}
+
+.dropdown-menu-jellyfin .dropdown-item {
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu-jellyfin .dropdown-item:hover {
+    background: var(--background-secondary);
+    color: var(--jellyfin-primary);
+}
+
+.dropdown-menu-jellyfin .dropdown-item.text-danger:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.dropdown-menu-jellyfin .dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: var(--border-color);
+}
+
+/* Badge styles */
+.badge-jellyfin {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    color: white;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.badge-jellyfin-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.badge-jellyfin-success {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.badge-jellyfin-danger {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Pagination styles */
+.pagination-container {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--background-secondary);
+}
+
+.pagination-jellyfin {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagination-jellyfin .page-item {
+    margin: 0;
+}
+
+.pagination-jellyfin .page-link {
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    font-weight: 500;
+}
+
+.pagination-jellyfin .page-link:hover {
+    background: var(--jellyfin-primary);
+    color: white;
+    border-color: var(--jellyfin-primary);
+    transform: translateY(-1px);
+}
+
+.pagination-jellyfin .page-item.active .page-link {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    color: white;
+    border-color: var(--jellyfin-primary);
+}
+
+.pagination-jellyfin .page-item.disabled .page-link {
+    background: var(--background-secondary);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+.pagination-jellyfin .page-item.disabled .page-link:hover {
+    transform: none;
+    background: var(--background-secondary);
+    color: var(--text-secondary);
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.empty-state i {
+    opacity: 0.5;
+}
+
+/* Spinner */
+.spinner-jellyfin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.spinner-border.text-jellyfin {
+    border-color: rgba(170, 92, 195, 0.2);
+    border-left-color: var(--jellyfin-primary);
+}
+
+/* ===== END USERS TABLE STYLES ===== */
+
+/* Dark mode support (futuro) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --macos-bg: #1C1C1E;
+        --macos-surface: #2C2C2E;
+        --macos-surface-secondary: #3A3A3C;
+        --macos-border: #48484A;
+        --macos-text: #F2F2F7;
+        --macos-text-secondary: #AEAEB2;
+        --macos-text-tertiary: #8E8E93;
+    }
+}
+
+/* ===== SETTINGS PAGE STYLES ===== */
+.settings-container {
+    padding: 1.5rem;
+}
+
+.setting-item {
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+}
+
+.setting-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--jellyfin-primary);
+}
+
+.setting-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.setting-content {
+    flex: 1;
+}
+
+.setting-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.setting-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.setting-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.setting-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.setting-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Toggle Switch */
+.btn-toggle {
+    position: relative;
+    width: 54px;
+    height: 28px;
+    background: var(--background-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    outline: none;
+}
+
+.btn-toggle:hover {
+    border-color: var(--jellyfin-primary);
+}
+
+.toggle-slider {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: all var(--transition-smooth);
+    left: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-toggle.active {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    border-color: var(--jellyfin-primary);
+}
+
+.btn-toggle.active .toggle-slider {
+    transform: translateX(26px);
+}
+
+/* Badge variations for settings */
+.badge-jellyfin-danger {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Responsive settings */
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 1rem;
+    }
+    
+    .setting-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .setting-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .setting-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+}
+
+/* ===== END SETTINGS PAGE STYLES ===== */
+
+/* ===== PROFILE PAGE STYLES ===== */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--background-secondary);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-card);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.profile-role {
+    margin: 0;
+}
+
+/* Form Groups */
+.form-group-jellyfin {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.925rem;
+}
+
+.input-group-jellyfin {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    z-index: 5;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.input-action {
+    position: absolute;
+    right: 1rem;
+    z-index: 5;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.input-action:hover {
+    color: var(--jellyfin-primary);
+    background: var(--background-secondary);
+}
+
+.form-control-macos {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--background-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-smooth);
+    outline: none;
+}
+
+.input-group-jellyfin .form-control-macos {
+    padding-right: 3rem;
+}
+
+.form-control-macos:focus {
+    border-color: var(--jellyfin-primary);
+    box-shadow: 0 0 0 0.2rem rgba(170, 92, 195, 0.25);
+    background: var(--background-primary);
+}
+
+.form-control-macos::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.form-text {
+    margin-top: 0.5rem;
+    font-size: 0.825rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Form Actions */
+.form-actions {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    width: 100%;
+}
+
+/* Responsive adjustments for profile */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .profile-avatar {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+    }
+    
+    .profile-name {
+        font-size: 1.25rem;
+    }
+    
+    .btn-lg {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+/* ===== END PROFILE PAGE STYLES ===== */
+
+/* ========================================
+   ALERTAS COLORIDOS JELLYFIN
+======================================== */
+.alert-info-jellyfin {
+    background: linear-gradient(135deg, rgba(41, 128, 185, 0.1), rgba(52, 152, 219, 0.1));
+    border: 1px solid rgba(41, 128, 185, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.alert-info-jellyfin ul {
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.alert-info-jellyfin li {
+    margin-bottom: 0.25rem;
+}
+
+.alert-success-jellyfin {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.alert-warning-jellyfin {
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(243, 156, 18, 0.1));
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.alert-danger-jellyfin {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    border-radius: var(--border-radius-lg);
+    color: var(--macos-text-primary);
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* ========================================
+   PÁGINA DE MANUTENÇÃO
+======================================== */
+.maintenance-info {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.spinner-jellyfin .spinner-border {
+    width: 2rem;
+    height: 2rem;
+    border-width: 3px;
+}
+
+/* ========================================
+   CÓDIGOS E ELEMENTOS INLINE
+======================================== */
+code {
+    background: var(--macos-surface-secondary);
+    border: 1px solid var(--macos-border);
+    border-radius: var(--border-radius-sm);
+    padding: 0.25rem 0.5rem;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: 0.875rem;
+    color: var(--jellyfin-primary);
+}
+
+/* ========================================
+   ANIMAÇÕES E TRANSIÇÕES REFINADAS
+======================================== */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(170, 92, 195, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(170, 92, 195, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(170, 92, 195, 0); }
+}
+
+.pulse-animation {
+    animation: pulseGlow 2s infinite;
+}
+
+/* ========================================
+   MELHORIAS DE RESPONSIVIDADE
+======================================== */
+@media (max-width: 768px) {
+    .auth-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .auth-logo .logo-image {
+        max-height: 50px;
+    }
+    
+    .auth-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn-lg {
+        margin-bottom: 0.75rem;
+    }
+    
+    .alert-info-jellyfin,
+    .alert-warning-jellyfin,
+    .alert-danger-jellyfin,
+    .alert-success-jellyfin {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   ESTADOS DE HOVER E FOCUS REFINADOS
+======================================== */
+.btn-jellyfin:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--macos-shadow-heavy);
+}
+
+.btn-jellyfin-outline:hover {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary));
+    color: white;
+    transform: translateY(-1px);
+}
+
+.form-control-macos:focus {
+    border-color: var(--jellyfin-primary);
+    box-shadow: 0 0 0 3px rgba(170, 92, 195, 0.1);
+}
+
+/* ========================================
+   UTILITÁRIOS FINAIS
+======================================== */
+.text-jellyfin {
+    color: var(--jellyfin-primary) !important;
+}
+
+.bg-jellyfin {
+    background: linear-gradient(135deg, var(--jellyfin-primary), var(--jellyfin-secondary)) !important;
+}
+
+.border-jellyfin {
+    border-color: var(--jellyfin-primary) !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   DEBUG - ESTILOS REFINADOS
+======================================== */
+.debug-container {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: 0.75rem;
+    border-radius: var(--border-radius-lg);
+    margin-top: 2rem;
+}
+
+.debug-container .modal-content {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid var(--jellyfin-primary);
+}
+
+.debug-container .table {
+    color: #ffffff;
+}
+
+.debug-container .table td {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   FINALIZAÇÕES E POLIMENTOS
+======================================== */
+.icon-hover {
+    transition: all 0.2s ease;
+}
+
+.icon-hover:hover {
+    color: var(--jellyfin-primary);
+    transform: scale(1.1);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Melhorias no loading spinner */
+.spinner-border.text-jellyfin {
+    border-color: var(--jellyfin-primary);
+    border-right-color: transparent;
+}
+
+/* Estados de validação aprimorados */
+.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+}
+
+.is-valid {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1) !important;
+}

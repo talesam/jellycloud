@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" style="background: transparent;">
+  <defs>
+    <linearGradient id="jelly-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#AA5CC3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7D4698;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A4C93;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cloud-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#E8F4FD;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Nuvem principal -->
+  <path d="M16 35 C16 25, 22 20, 30 23 C34 18, 42 18, 46 23 C50 23, 54 27, 54 35 C54 40, 50 45, 46 45 L20 45 C16 45, 12 40, 16 35 Z" 
+        fill="url(#cloud-light)" 
+        stroke="url(#jelly-gradient)" 
+        stroke-width="2"/>
+  
+  <!-- Gotinhas -->
+  <circle cx="25" cy="50" r="2.5" fill="#AA5CC3"/>
+  <circle cx="32" cy="52" r="2" fill="#7D4698"/>
+  <circle cx="39" cy="50" r="2.5" fill="#6A4C93"/>
+  
+  <!-- Letra J estilizada -->
+  <text x="28" y="38" font-family="-apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="16" font-weight="bold" fill="url(#jelly-gradient)">
+    J
+  </text>
+</svg>

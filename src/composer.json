@@ -1,0 +1,35 @@
+{
+    "name": "jellycp/jellycloud",
+    "description": "JellyCloud - Sistema elegante de armazenamento em nuvem com interface inspirada no Jellyfin",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JellyCP",
+            "email": "admin@jellycloud.com"
+        }
+    ],
+    "keywords": ["cloud", "storage", "jellyfin", "file-manager", "php", "docker"],
+    "homepage": "https://github.com/jellycp/jellycloud",
+    "require": {
+        "php": ">=8.0",
+        "phpmailer/phpmailer": "^6.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "JellyCloud\\": ""
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo 'JellyCloud instalado com sucesso! 🍇'"
+        ],
+        "post-update-cmd": [
+            "echo 'JellyCloud atualizado com sucesso! 🍇'"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
